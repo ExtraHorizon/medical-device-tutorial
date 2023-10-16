@@ -19,9 +19,8 @@ exports.handler = async (task) => {
     // Transition the document to analyzed
     await sdk.data.documents.transition('blood-pressure-measurement', task.data.documentId, { id: transition.id, data: { category }  });
 
-
+    // Sending an email with the result of the analysis
     const user = await sdk.users.findById(retrievedDocument.creatorId);
-
     await sdk.mails.send({
         recipients: { to: [user.email] },
         templateId: "652d1daf3844935e3f82e066",
