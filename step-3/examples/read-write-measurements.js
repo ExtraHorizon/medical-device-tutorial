@@ -16,8 +16,6 @@ const DIASTOLIC = 80;
 
   //Read the blood pressure document
   const retrievedDocument= await sdk.data.documents.findById('blood-pressure-measurement', createdDocument.id);
-
-  console.log(`👉 Retrieved created document:${EOL}${JSON.stringify(retrievedDocument, null, 4)}`);
   console.log(`👉 Blood Pressure is categorize as ${retrievedDocument.data.category}`);
 
   //Remove the blood pressure document again
