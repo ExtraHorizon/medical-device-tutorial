@@ -17,5 +17,5 @@
     "subject": "Your measurement of $content.date was analyzed!"
   },
   "description": "Template used to send a analysis email",
-  "name": "mail-analysis"
+  "name": "mail-analysis-template"
 }

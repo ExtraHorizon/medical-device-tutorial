@@ -8,14 +8,19 @@
       "blood_pressure": {
         "type": "string"
       },
+      "diastolic": {
+        "type": "number"
+      },
+      "systolic": {
+        "type": "number"
+      },
       "date": {
         "type": "string"
       }
     }
   },
   "fields": {
-    "subject": "Your measurement of $content.date was analyzed!"
   },
-  "description": "Template used to send a analysis email",
-  "name": "mail-analysis"
+  "description": "Template used to generate a pdf-analysis",
+  "name": "pdf-analysis"
 }

@@ -22,6 +22,7 @@ exports.handler = async (task) => {
     // Sending an email with the result of the analysis
     const user = await sdk.users.findById(retrievedDocument.creatorId);
     const template = await sdk.templates.findByName("mail-analysis");
+
     await sdk.mails.send({
         recipients: { to: [user.email] },
         templateId: template.id,
