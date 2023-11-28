@@ -20,22 +20,7 @@
     uuid "^8.3.2"
     yargs "^17.5.1"
 
-"@extrahorizon/javascript-sdk@^7.6.0":
-  version "7.6.0"
-  resolved "https://npm.pkg.github.com/download/@ExtraHorizon/javascript-sdk/7.6.0/ced8ec6f449767be79ded57a156436d5df995116#ced8ec6f449767be79ded57a156436d5df995116"
-  integrity sha512-vNeEvDLa2pUndr+zDGDLbAKSC+KPYuqB709kBTIq3UFqprjuZnTKpKyO3zo3HkjjP288brvBfJDuEzuXXqCM3g==
-  dependencies:
-    axios "^0.27.2"
-    buffer "^6.0.3"
-    crypto-es "^1.2.7"
-    fflate "^0.7.3"
-    form-data "^4.0.0"
-    oauth-1.0a "^2.2.6"
-    platform-specific "^1.1.0"
-    ts-toolbelt "^9.6.0"
-    typescript-json-decoder "^1.0.10"
-
-"@extrahorizon/javascript-sdk@^7.8.0":
+"@extrahorizon/javascript-sdk@^7.6.0", "@extrahorizon/javascript-sdk@^7.8.0":
   version "7.8.0"
   resolved "https://npm.pkg.github.com/download/@ExtraHorizon/javascript-sdk/7.8.0/4c7a703364fab46c5d42fc184bbf098cc3ddad39#4c7a703364fab46c5d42fc184bbf098cc3ddad39"
   integrity sha512-IxZ6F100VKrFuuhyhLshKOcLGGz8+XOJ2B1UDA1WLT1NvRMczChyrfxkCDkkRUmIglr4rQP69q/gi2mcPmjubw==
@@ -166,9 +151,9 @@ archiver@^5.3.1:
     zip-stream "^4.1.0"
 
 async@^3.2.4:
-  version "3.2.4"
-  resolved "https://registry.yarnpkg.com/async/-/async-3.2.4.tgz#2d22e00f8cddeb5fde5dd33522b56d1cf569a81c"
-  integrity sha512-iAB+JbDEGXhyIUavoDl9WP/Jj106Kz9DEn1DPgYw5ruDn0e3Wgi3sKFm55sASdGBNOQB8F59d9qQ7deqrHA8wQ==
+  version "3.2.5"
+  resolved "https://registry.yarnpkg.com/async/-/async-3.2.5.tgz#ebd52a8fdaf7a2289a24df399f8d8485c8a46b66"
+  integrity sha512-baNZyqaaLhyLVKm/DlvdW051MSgO6b8eVfIezl9E5PqWxFgzLm/wQntEW4zOytVburDEr0JlALEpdOFwvErLsg==
 
 asynckit@^0.4.0:
   version "0.4.0"
@@ -855,11 +840,6 @@ normalize-url@^4.1.0:
   resolved "https://registry.yarnpkg.com/normalize-url/-/normalize-url-4.5.1.tgz#0dd90cf1288ee1d1313b87081c9a5932ee48518a"
   integrity sha512-9UZCFRHQdNrfTpGg8+1INIg93B6zE0aXMVFkw1WFwvO4SlZywU6aLg5Of0Ap/PgcbSw4LNxvMWXMeugwMCX0AA==
 
-oauth-1.0a@^2.2.6:
-  version "2.2.6"
-  resolved "https://registry.yarnpkg.com/oauth-1.0a/-/oauth-1.0a-2.2.6.tgz#eadbccdb3bceea412d24586e6f39b2b412f0e491"
-  integrity sha512-6bkxv3N4Gu5lty4viIcIAnq5GbxECviMBeKR3WX/q87SPQ8E8aursPZUtsXDnxCs787af09WPRBLqYrf/lwoYQ==
-
 object-inspect@^1.9.0:
   version "1.13.1"
   resolved "https://registry.yarnpkg.com/object-inspect/-/object-inspect-1.13.1.tgz#b96c6109324ccfef6b12216a956ca4dc2ff94bc2"
@@ -916,9 +896,9 @@ pump@^3.0.0:
     once "^1.3.1"
 
 punycode@^2.1.0:
-  version "2.3.0"
-  resolved "https://registry.yarnpkg.com/punycode/-/punycode-2.3.0.tgz#f67fa67c94da8f4d0cfff981aee4118064199b8f"
-  integrity sha512-rRV+zQD8tVFys26lAGR9WUuS4iUAngJScM+ZRSKtvl5tKeZ2t5bvdNFdNHBW9FWR4guGHlgmsZ1G7BSm2wTbuA==
+  version "2.3.1"
+  resolved "https://registry.yarnpkg.com/punycode/-/punycode-2.3.1.tgz#027422e2faec0b25e1549c3e1bd8309b9133b6e5"
+  integrity sha512-vYt7UD1U9Wg6138shLtLOvdAu+8DsC/ilFtEVHcH+wydcSpNE20AfSOduf6MkRFahL5FY7X1oU7nKVZFtfq8Fg==
 
 pupa@^2.1.1:
   version "2.1.1"

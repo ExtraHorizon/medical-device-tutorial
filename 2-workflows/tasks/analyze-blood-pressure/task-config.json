@@ -1,7 +1,7 @@
 {
   "name": "analyze-blood-pressure",
   "description": "Function to categorize blood pressure measurements",
-  "path": "./tasks/analyze-blood-pressure",
+  "path": "./",
   "entryPoint": "index.handler",
   "runtime": "nodejs16.x",
   "timeLimit": 60,

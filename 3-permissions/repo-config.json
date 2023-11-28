@@ -1,0 +1,12 @@
+
+{
+  "schemas": [
+    "schemas"
+  ],
+  "templates": [
+    "../2-workflows/templates"
+  ],
+  "tasks": [
+    "../2-workflows/tasks"
+  ]
+}
