@@ -1,10 +1,9 @@
 import { createOAuth2Client } from '@extrahorizon/javascript-sdk';
 
-const CLIENT_ID = '409ce9ba49c56cce31b9d2b1b2f5ed5ac01b4012';
+const CLIENT_ID = 'f25fa7478cd2685f0d14971e7d6e7aab55c8dbaa';
 
 document.getElementById('loginForm').addEventListener('submit', async event => {
   event.preventDefault();
-  // event.stopPropagation();
 
   const formData = event.target.elements;
   const host = formData.host.value;
@@ -26,13 +25,4 @@ document.getElementById('loginForm').addEventListener('submit', async event => {
   } catch (error) {
     console.log(error);
   }
-
-  console.log({
-    hostAddress,
-    email,
-    password,
-  });
-
-  // fetch();
-  console.log(event.target?.elements?.host?.value);
 })

@@ -4,13 +4,14 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "build": "npx webpack",
-    "create-cert": "cd dist && openssl req -newkey rsa:2048 -new -nodes -x509 -days 3650 -keyout key.pem -out cert.pem"
+    "watch": "node --env-file=.env scripts/watch.mjs",
+    "build": "node scripts/build.mjs"
   },
   "dependencies": {
     "@extrahorizon/javascript-sdk": "^7.8.0"
   },
   "devDependencies": {
+    "esbuild": "^0.19.8",
     "webpack": "^5.89.0",
     "webpack-cli": "^5.1.4"
   }
