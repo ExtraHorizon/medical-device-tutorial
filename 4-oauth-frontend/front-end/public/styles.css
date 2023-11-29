@@ -22,6 +22,10 @@ body {
   font-weight: bold;
 }
 
+.login-form .welcome-message {
+  font-weight: normal;
+}
+
 .login-form form {
   display: flex;
   flex-direction: column;

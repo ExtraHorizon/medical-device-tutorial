@@ -2,7 +2,10 @@ import { createOAuth2Client } from '@extrahorizon/javascript-sdk';
 
 const CLIENT_ID = 'f25fa7478cd2685f0d14971e7d6e7aab55c8dbaa';
 
-document.getElementById('loginForm').addEventListener('submit', async event => {
+const loginForm = document.getElementById('loginForm');
+const container = document.getElementById('container');
+
+loginForm.addEventListener('submit', async event => {
   event.preventDefault();
 
   const formData = event.target.elements;
@@ -16,13 +19,29 @@ document.getElementById('loginForm').addEventListener('submit', async event => {
       clientId: CLIENT_ID,
     });
   
-    const response = await sdk.auth.authenticate({
+    await sdk.auth.authenticate({
       username: email,
       password,
     });
 
-    console.log(response);
+    const userData = await sdk.users.me();
+
+    showWelcomeMessage(userData);
   } catch (error) {
     console.log(error);
   }
-})
+});
+
+function showWelcomeMessage(user) {
+  container.removeChild(loginForm);
+  const title = document.createElement('h2');
+  const message = document.createElement('p');
+
+  message.classList.add('welcome-message');
+
+  title.textContent = 'Success';
+  message.textContent = `Welcome ${user.firstName} ${user.lastName}.`;
+
+  container.appendChild(title);
+  container.appendChild(message);
+}

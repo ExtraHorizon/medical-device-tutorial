@@ -2,7 +2,7 @@ export const config = () => ({
   entryPoints: ['src/index.js'],
   logLevel: 'info',
   bundle: true,
-  outfile: 'dist/main.js',
+  outfile: 'public/main.js',
   publicPath: '/',
   loader: {
     '.svg': 'file',

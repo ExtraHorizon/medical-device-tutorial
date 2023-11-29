@@ -8,7 +8,7 @@ const context = await esbuild.context(config());
 const listenPort = 3000;
 
 await context.watch();
-const { host, port } = await context.serve({ servedir: 'dist' });
+const { host, port } = await context.serve({ servedir: 'public' });
 
 if(process.env.PROXY_BACKEND_URL === undefined) {
   throw new Error('PROXY_BACKEND_URL is undefined. Set it in either your shell or a \'.env\' file');
