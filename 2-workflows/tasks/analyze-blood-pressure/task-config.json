@@ -1,8 +1,8 @@
 {
   "name": "analyze-blood-pressure",
   "description": "Function to categorize blood pressure measurements",
-  "path": "./",
-  "entryPoint": "src/index.handler",
+  "path": "./build",
+  "entryPoint": "index.handler",
   "runtime": "nodejs16.x",
   "timeLimit": 60,
   "memoryLimit": 128,

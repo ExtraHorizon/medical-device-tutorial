@@ -4,11 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build-flow-1": "esbuild src/index-flow-1.js --bundle --platform=node --target=node16 --outfile=build/index.js",
+    "build-flow-2": "esbuild src/index-flow-2.js --bundle --platform=node --target=node16 --outfile=build/index.js",
+    "build-flow-3": "esbuild src/index-flow-2.js --bundle --platform=node --target=node16 --outfile=build/index.js"
   },
   "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "@extrahorizon/javascript-sdk": "^7.6.0"
-  }
+  "license": "ISC"
 }
