@@ -1,6 +1,6 @@
 Dear $content.first_name,
 
-Your blood pressure measurement of $content.date was analyzed and categorized as $content.blood_pressure!
+Your blood pressure measurement of $content.date was analyzed and categorized as $content.category!
 
 Kind regards,
 The team

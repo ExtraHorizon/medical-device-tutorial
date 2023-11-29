@@ -34,22 +34,8 @@ exports.handler = async (task) => {
     const schema = await sdk.data.schemas.findByName('blood-pressure-measurement');
     const transition = schema.transitions.find(transition => transition.name === "mark-as-analyzed");
 
-    // Transition the document to analyzed
-    await sdk.data.documents.transition('blood-pressure-measurement', task.data.documentId, { id: transition.id, data: { category: diagnosis }  });
-
     // Sending an email with the result of the analysis
     const user = await sdk.users.findById(retrievedDocument.creatorId);
-    const template = await sdk.templates.findByName("mail-analysis");
-
-    await sdk.mails.send({
-        recipients: { to: [user.email] },
-        templateId: template.id,
-        content: {
-            first_name: user.firstName,
-            date: retrievedDocument.data.timestamp.toLocaleString(),
-            blood_pressure: diagnosis,
-        }
-    });
 
     // Find the pdf template
     const pdfTemplate = await sdk.templates.findByName("pdf-analysis");
@@ -60,7 +46,7 @@ exports.handler = async (task) => {
         "time_zone": "Europe/Brussels",
         "content": {
             "first_name": user.first_name,
-            "category": category,
+            "category": diagnosis,
             "diastolic": retrievedDocument.data.diastolic,
             "systolic": retrievedDocument.data.systolic,
             "date": new Date(retrievedDocument.data.timestamp).toDateString(),
@@ -75,7 +61,7 @@ exports.handler = async (task) => {
         'blood-pressure-measurement',
         task.data.documentId,
         // Report property is added to the data to store the file service token
-        { id: transition.id, data: { category, report: fileResult.tokens[0].token }}
+        { id: transition.id, data: { category: diagnosis, report: fileResult.tokens[0].token }}
     );
 
     // Sending an email with the result of the analysis
@@ -86,8 +72,13 @@ exports.handler = async (task) => {
         templateId: mailTemplate.id,
         content: {
             first_name: user.firstName,
-            date: measurement.timestamp.toLocaleString(),
-            category: category,
-        }
+            date: retrievedDocument.data.timestamp.toLocaleString(),
+            category: diagnosis,
+        },
+         attachments: [{
+            name: 'analysis.pdf',
+            content: pdf.toString('base64'),
+            type: fileResult.mimetype,
+         }],
     });
 };

@@ -11,7 +11,7 @@ const DIASTOLIC = 80;
   console.log('👉 New document created!');
 
   // Wait 2 seconds to make sure the analysis is done
-  await new Promise(resolve => setTimeout(resolve, 2000));
+  await new Promise(resolve => setTimeout(resolve, 3000));
 
   //Read the blood pressure document
   const retrievedDocument= await sdk.data.documents.findById('blood-pressure-measurement', createdDocument.id);
