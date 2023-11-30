@@ -1,5 +1,7 @@
+#!/usr/bin/env node
+
 const { getSDK } = require('./auth.js');
-const { analyzeDocument } = require('../2-workflows/tasks/analyze-blood-pressure/src/diagnose.js')
+const { doTask } = require('../2-workflows/tasks/analyze-blood-pressure/src/index-flow-1.js')
 const readline = require('node:readline/promises');
 
 const SCHEMA_NAME = 'blood-pressure-measurement';
@@ -14,7 +16,7 @@ const SCHEMA_NAME = 'blood-pressure-measurement';
   rl.close();
 
   /* Analyze the document */
-  await analyzeDocument({sdk, documentId: documentID});
+  await doTask({sdk, data: { documentId: documentID }});
 
   console.log("Task finished!");
 })();

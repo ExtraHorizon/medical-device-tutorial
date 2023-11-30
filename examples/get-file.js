@@ -1,19 +1,22 @@
 #!/usr/bin/env node
 const { getSDK } = require('./auth.js');
 const readline = require('node:readline/promises');
-
-const SCHEMA_NAME = 'blood-pressure-group';
+const fs = require('fs');
 
 (async () => {
   const sdk = await getSDK();
 
   const rl = readline.createInterface({input: process.stdin, output: process.stdout});
 
-  const documentID = await rl.question('Enter group ID to fetch: ');
+  const token = await rl.question('Enter file token: ');
 
   rl.close();
 
-  // Create a document
-  const group = await sdk.data.documents.findById(SCHEMA_NAME, documentID);
-  console.log(JSON.stringify(group, null, 4));
+  //Retrieve file
+  const pdf = await sdk.files.retrieve(token);
+
+  //Write it to disk
+  fs.writeFileSync("report.pdf",pdf);
+
+  console.log("Retrieved file & stored as report.pdf")
 })();

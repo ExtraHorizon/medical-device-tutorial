@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 const { getSDK } = require('./auth.js');
 const readline = require('node:readline/promises');
 

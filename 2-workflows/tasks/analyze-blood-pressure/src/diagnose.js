@@ -21,12 +21,10 @@ function getDiagnosis(systolic, diastolic) {
 }
 
 
-async function analyzeDocument({sdk, documentId}) {
-  //Read the blood pressure document
-  const retrievedDocument= await sdk.data.documents.findById('blood-pressure-measurement', documentId);
+async function analyzeDocument({sdk, document}) {
 
   // Analyze the measurement and assign a category to it
-  const diagnosis = getDiagnosis(retrievedDocument.data.systolic, retrievedDocument.data.diastolic);
+  const diagnosis = getDiagnosis(document.data.systolic, document.data.diastolic);
 
   // Find the id of the transition, needed for transitioning the document
   const schema = await sdk.data.schemas.findByName('blood-pressure-measurement');
@@ -35,7 +33,7 @@ async function analyzeDocument({sdk, documentId}) {
   // Transition the document to analyzed
   await sdk.data.documents.transition(
       'blood-pressure-measurement',
-      documentId,
+      document.id,
       // Report property is added to the data to store the file service token
       { id: transition.id, data: { category: diagnosis }}
   );
