@@ -25,13 +25,13 @@ exports.handler = async (task) => {
     const sdk = await getSDK();
 
     //Read the blood pressure document
-    const retrievedDocument= await sdk.data.documents.findById('blood-pressure-measurement', task.data.documentId);
+    const retrievedDocument= await sdk.data.documents.findById("blood-pressure-measurement", task.data.documentId);
 
     // Analyze the measurement and assign a category to it
     const diagnosis = getDiagnosis(retrievedDocument.data.systolic, retrievedDocument.data.diastolic);
 
     // Find the id of the transition, needed for transitioning the document
-    const schema = await sdk.data.schemas.findByName('blood-pressure-measurement');
+    const schema = await sdk.data.schemas.findByName("blood-pressure-measurement");
     const transition = schema.transitions.find(transition => transition.name === "mark-as-analyzed");
 
     // Sending an email with the result of the analysis
@@ -58,7 +58,7 @@ exports.handler = async (task) => {
 
     // Transition the document to analyzed
     await sdk.data.documents.transition(
-        'blood-pressure-measurement',
+        "blood-pressure-measurement",
         task.data.documentId,
         // Report property is added to the data to store the file service token
         { id: transition.id, data: { category: diagnosis, report: fileResult.tokens[0].token }}
@@ -73,11 +73,10 @@ exports.handler = async (task) => {
         content: {
             first_name: user.firstName,
             date: retrievedDocument.data.timestamp.toLocaleString(),
-            category: diagnosis,
         },
          attachments: [{
-            name: 'analysis.pdf',
-            content: pdf.toString('base64'),
+            name: "analysis.pdf",
+            content: pdf.toString("base64"),
             type: fileResult.mimetype,
          }],
     });

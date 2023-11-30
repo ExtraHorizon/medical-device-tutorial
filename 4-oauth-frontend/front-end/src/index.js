@@ -1,6 +1,6 @@
 import { createOAuth2Client } from '@extrahorizon/javascript-sdk';
 
-const CLIENT_ID = 'f25fa7478cd2685f0d14971e7d6e7aab55c8dbaa';
+const CLIENT_ID = process.env.CLIENT_ID;
 
 const loginForm = document.getElementById('loginForm');
 const container = document.getElementById('container');

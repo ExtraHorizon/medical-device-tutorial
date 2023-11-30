@@ -5,9 +5,6 @@
       "first_name": {
         "type": "string"
       },
-      "category": {
-        "type": "string"
-      },
       "date": {
         "type": "string"
       }
@@ -16,6 +13,6 @@
   "fields": {
     "subject": "Your measurement of $content.date was analyzed!"
   },
-  "description": "Template used to send a analysis email",
+  "description": "Template used to send an analysis email",
   "name": "mail-analysis-template"
 }
