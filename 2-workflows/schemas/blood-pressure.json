@@ -4,17 +4,12 @@
   "statuses": {
     "created": {},
     "analyzing": {},
-    "analyzed": {}
+    "analyzed": {},
+    "report-available": {}
   },
   "creationTransition": {
     "type": "manual",
-    "toStatus": "created",
-    "conditions": [],
-    "actions": [
-      {
-        "type": "linkCreator"
-      }
-    ]
+    "toStatus": "created"
   },
   "transitions": [
     {
@@ -49,7 +44,28 @@
             }
           }
         ]
+    },
+    {
+      "name": "add-report",
+      "type": "manual",
+      "toStatus": "report-available",
+      "fromStatuses": [ "analyzed" ],
+        "conditions": [
+          {
+            "type": "input",
+            "configuration": {
+              "type": "object",
+              "properties": {
+                "report": {
+                  "type": "string"
+                }
+              },
+              "required": ["report"]
+            }
+          }
+        ]
     }
+
   ],
   "properties": {
     "systolic": {

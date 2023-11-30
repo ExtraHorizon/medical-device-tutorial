@@ -1,0 +1,31 @@
+{
+  "name": "blood-pressure-group",
+  "description": "Blood pressure group",
+  "createMode": "permissionRequired",
+  "readMode": "enlistedInLinkedGroups",
+  "updateMode": "linkedGroupsStaffOnly",
+  "deleteMode": "permissionRequired",
+  "statuses": {
+    "created": {}
+  },
+  "creationTransition": {
+    "type": "manual",
+    "toStatus": "created",
+    "conditions": [],
+    "actions": []
+  },
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Group name"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "high pressure",
+        "low pressure"
+      ],
+      "description": "type of group"
+    }
+  }
+}

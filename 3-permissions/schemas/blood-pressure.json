@@ -4,7 +4,8 @@
   "statuses": {
     "created": {},
     "analyzing": {},
-    "analyzed": {}
+    "analyzed": {},
+    "report-available": {}
   },
   "creationTransition": {
     "type": "manual",
@@ -13,6 +14,9 @@
     "actions": [
       {
         "type": "linkCreator"
+      },
+      {
+        "type": "linkEnlistedGroups"
       }
     ]
   },
@@ -46,6 +50,26 @@
                 }
               },
               "required": ["category"]
+            }
+          }
+        ]
+    },
+    {
+      "name": "add-report",
+      "type": "manual",
+      "toStatus": "report-available",
+      "fromStatuses": [ "analyzed" ],
+        "conditions": [
+          {
+            "type": "input",
+            "configuration": {
+              "type": "object",
+              "properties": {
+                "report": {
+                  "type": "string"
+                }
+              },
+              "required": ["report"]
             }
           }
         ]
