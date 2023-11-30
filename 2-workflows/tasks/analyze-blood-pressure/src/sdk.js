@@ -1,4 +1,4 @@
-const { createClient } = require('@extrahorizon/javascript-sdk');
+const { createClient } = require("@extrahorizon/javascript-sdk");
 
 async function getSDK() {
   const sdk = createClient({

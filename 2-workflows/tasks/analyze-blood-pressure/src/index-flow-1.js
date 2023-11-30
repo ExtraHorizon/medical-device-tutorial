@@ -3,7 +3,7 @@ const { analyzeDocument } = require("./diagnose");
 
 exports.doTask =  async ({sdk, task}) => {
   //Read the blood pressure document
-  const retrievedDocument= await sdk.data.documents.findById('blood-pressure-measurement', task.data.documentId);
+  const retrievedDocument= await sdk.data.documents.findById("blood-pressure-measurement", task.data.documentId);
 
   /* Analyze the document */
   await analyzeDocument({ sdk, document: retrievedDocument});

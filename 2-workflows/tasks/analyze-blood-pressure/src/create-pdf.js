@@ -18,7 +18,7 @@ async function createPDF({sdk, user, document, diagnosis}) {
 
 
   // Find the id of the transition, needed for transitioning the document
-  const schema = await sdk.data.schemas.findByName('blood-pressure-measurement');
+  const schema = await sdk.data.schemas.findByName("blood-pressure-measurement");
   const transition = schema.transitions.find(transition => transition.name === "add-report");
 
   // Upload the pdf to the file service
@@ -26,7 +26,7 @@ async function createPDF({sdk, user, document, diagnosis}) {
 
   // Transition the document to analyzed
   await sdk.data.documents.transition(
-      'blood-pressure-measurement',
+      "blood-pressure-measurement",
       document.id,
       // Report property is added to the data to store the file service token
       { id: transition.id, data: { report: fileResult.tokens[0].token }}
