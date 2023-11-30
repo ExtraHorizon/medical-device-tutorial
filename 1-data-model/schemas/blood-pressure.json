@@ -6,8 +6,7 @@
   },
   "creationTransition": {
     "type": "manual",
-    "toStatus": "created",
-    "conditions": []
+    "toStatus": "created"
   },
   "properties": {
     "systolic": {

@@ -9,13 +9,7 @@
   },
   "creationTransition": {
     "type": "manual",
-    "toStatus": "created",
-    "conditions": [],
-    "actions": [
-      {
-        "type": "linkCreator"
-      }
-    ]
+    "toStatus": "created"
   },
   "transitions": [
     {
