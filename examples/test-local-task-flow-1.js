@@ -4,8 +4,6 @@ const { getSDK } = require('./auth.js');
 const { doTask } = require('../2-workflows/tasks/analyze-blood-pressure/src/index-flow-1.js')
 const readline = require('node:readline/promises');
 
-const SCHEMA_NAME = 'blood-pressure-measurement';
-
 (async () => {
   const sdk = await getSDK();
 

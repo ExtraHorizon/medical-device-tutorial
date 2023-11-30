@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 const { getSDK } = require('./auth.js');
-const { doTask } = require('../2-workflows/tasks/analyze-blood-pressure/src/index-flow-2.js')
+const { doTask } = require('../2-workflows/tasks/analyze-blood-pressure/src/index-flow-3.js')
 const readline = require('node:readline/promises');
 
 (async () => {
