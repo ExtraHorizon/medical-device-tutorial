@@ -1,0 +1,12 @@
+{
+  "name": "workflows",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "build-flow-1": "esbuild tasks/analyze-blood-pressure/src/index-flow-1.js --bundle --platform=node --target=node16 --outfile=tasks/analyze-blood-pressure/build/index.js",
+    "build-flow-2": "esbuild tasks/analyze-blood-pressure/src/index-flow-2.js --bundle --platform=node --target=node16 --outfile=tasks/analyze-blood-pressure/build/index.js",
+    "build-flow-3": "esbuild tasks/analyze-blood-pressure/src/index-flow-3.js --bundle --platform=node --target=node16 --outfile=tasks/analyze-blood-pressure/build/index.js"
+  },
+  "author": "",
+  "license": "ISC"
+}
