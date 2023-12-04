@@ -20,13 +20,15 @@ loginForm.addEventListener('submit', async event => {
       clientId: CLIENT_ID,
     });
   
-    await sdk.auth.authenticate({
+    const credentials = await sdk.auth.authenticate({
       username: email,
       password,
     });
 
     const userData = await sdk.users.me();
 
+    // Save oAuth2 refresh token to localStorage. Read more on https://oauth.net/2/refresh-tokens/ 
+    localStorage.setItem('refreshToken', credentials.refreshToken);
     showWelcomeMessage(userData);
   } catch (error) {
     createErrorToast(error.message);
