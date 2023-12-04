@@ -64,3 +64,33 @@ body {
 .login-form button:hover {
   background-color: rgb(44, 95, 255);
 }
+
+#toasts {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.toast {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 12px;
+  border: 1px solid black;
+  padding: 12px;
+  border-radius: 8px;
+  animation: fade-in 0.5s linear;
+  font-size: 20px;
+  max-width: 30vw;
+}
+
+.message {
+  flex-grow: 1;
+  color: white;
+  margin: 0;
+  overflow-wrap: break-word;
+}
+
+.error-toast {
+  background-color: red;
+}

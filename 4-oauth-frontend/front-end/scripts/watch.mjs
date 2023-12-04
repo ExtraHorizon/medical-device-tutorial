@@ -10,8 +10,8 @@ const listenPort = 3000;
 await context.watch();
 const { host, port } = await context.serve({ servedir: 'public' });
 
-if(process.env.PROXY_BACKEND_URL === undefined) {
-  throw new Error('PROXY_BACKEND_URL is undefined. Set it in either your shell or a \'.env\' file');
+if(process.env.BACKEND_URL === undefined) {
+  throw new Error('BACKEND_URL is undefined. Set it in either your shell or a \'.env\' file');
 }
 
 const proxy = http.createServer((req, res) => {
@@ -20,7 +20,7 @@ const proxy = http.createServer((req, res) => {
     let fwPort = port;
 
     if(path.startsWith('/api')) {
-      const newUrl =  new URL(process.env.SLCT_PROXY_BACKEND_URL);
+      const newUrl =  new URL(process.env.BACKEND_URL);
       fwHost = newUrl.hostname;
       fwPort = newUrl.port;
     }

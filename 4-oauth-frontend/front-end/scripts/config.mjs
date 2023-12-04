@@ -11,5 +11,6 @@ export const config = () => ({
   },
   define: {
     global: 'window',
+    'process.env': `{ "CLIENT_ID": "${process.env.CLIENT_ID}", "BACKEND_URL": "${process.env.BACKEND_URL}" }`,
   },
 });
