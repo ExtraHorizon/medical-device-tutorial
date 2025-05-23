@@ -1,8 +1,5 @@
 import { createOAuth2Client } from '@extrahorizon/javascript-sdk';
 
-const CLIENT_ID = process.env.CLIENT_ID;
-const HOST = process.env.BACKEND_URL;
-
 const loginForm = document.getElementById('loginForm');
 const container = document.getElementById('container');
 
@@ -10,14 +7,13 @@ loginForm.addEventListener('submit', async event => {
   event.preventDefault();
 
   const formData = event.target.elements;
-  const host = HOST;
   const email = formData.email.value;
   const password = formData.password.value;
 
   try {
     const sdk = createOAuth2Client({
-      host,
-      clientId: CLIENT_ID,
+      host: `${document.location.origin}/api`, // Forward request to the vite proxy, preventing CORS issues
+      clientId: import.meta.env.VITE_CLIENT_ID,
     });
   
     const credentials = await sdk.auth.authenticate({
