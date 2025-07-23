@@ -6,7 +6,7 @@
     "start": "vite"
   },
   "dependencies": {
-    "@extrahorizon/javascript-sdk": "^8.6.0"
+    "@extrahorizon/javascript-sdk": "^8.7.1"
   },
   "devDependencies": {
     "vite": "^6.3.5"
