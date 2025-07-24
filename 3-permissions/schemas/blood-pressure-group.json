@@ -1,4 +1,5 @@
 {
+  "$schema": "https://swagger.extrahorizon.com/cli/1.9.1/config-json-schemas/Schema.json",
   "name": "blood-pressure-group",
   "description": "Blood pressure group",
   "createMode": "permissionRequired",
