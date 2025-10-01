@@ -1,5 +1,5 @@
 {
-  "$schema": "https://swagger.extrahorizon.com/cli/1.9.1/config-json-schemas/Schema.json",
+  "$schema": "https://swagger.extrahorizon.com/cli/1.10.1/config-json-schemas/Schema.json",
   "name": "blood-pressure-measurement",
   "description": "Blood pressure measurement",
   "statuses": {
