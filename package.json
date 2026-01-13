@@ -4,7 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "dependencies": {
-    "@extrahorizon/exh-cli": "^1.11.0",
+    "@extrahorizon/exh-cli": "^1.11.1",
     "@extrahorizon/javascript-sdk": "^8.8.2"
   },
   "devDependencies": {
