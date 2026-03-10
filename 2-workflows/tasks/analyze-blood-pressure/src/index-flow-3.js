@@ -17,17 +17,17 @@ exports.doTask = async ({ sdk, task }) => {
 
   // Sending an email with the result of the analysis
   await sdk.mails.send({
-      recipients: { to: [user.email] },
-      templateName: 'mail-analysis',
-      content: {
-          first_name: user.firstName,
-          date: retrievedDocument.data.timestamp.toLocaleString(),
-      },
-       attachments: [{
-          name: 'analysis.pdf',
-          content: pdf.toString('base64'),
-          type: 'application/octet-stream',
-       }],
+    recipients: { to: [user.email] },
+    templateName: 'mail-analysis',
+    content: {
+      first_name: user.firstName,
+      date: retrievedDocument.data.timestamp.toLocaleString(),
+    },
+    attachments: [{
+      name: 'analysis.pdf',
+      content: pdf.toString('base64'),
+      type: 'application/octet-stream',
+    }],
   });
 }
 

@@ -2,17 +2,15 @@
 
 const { getSDK } = require('./auth.js');
 
-const SCHEMA_NAME = 'blood-pressure-measurement';
-
 (async () => {
   const sdk = await getSDK();
 
   // Get all documents of given schema
-  const documents = await sdk.data.documents.findAll(SCHEMA_NAME);
+  const documents = await sdk.data.documents.findAll('blood-pressure-measurement');
 
   for (const document of documents) {
     // Delete the document
-    await sdk.data.documents.remove(SCHEMA_NAME, document.id);
+    await sdk.data.documents.remove('blood-pressure-measurement', document.id);
     console.log(`Removed document ${document.id}`);
   }
 })();

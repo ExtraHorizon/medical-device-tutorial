@@ -7,9 +7,9 @@ const CREDENTIALS_FILE = `${homedir()}/.exh/credentials`;
 /* Fetch & parse credentials from the exh cli */
 async function getCredentials() {
   const credentials = (await readFile(CREDENTIALS_FILE)).toString()
-    .split(EOL)                                         //split file into different lines
-    .filter(l => l)                                     //remove empty lines
-    .map(line => line.split('=').map(t => t.trim()))    //split each line into tokens and remove whitespace
+    .split(EOL)                                         // split file into different lines
+    .filter(l => l)                                     // remove empty lines
+    .map(line => line.split('=').map(t => t.trim()))    // split each line into tokens and remove whitespace
     .reduce((a, c) => {                                 // ... and convert it into an object
       a[c[0]] = c[1];
       return a;

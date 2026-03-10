@@ -14,5 +14,5 @@ const { getSDK } = require('./auth.js');
     name: 'v1',
   });
 
-  console.log({application, version});
+  console.log({ application, version });
 })();
