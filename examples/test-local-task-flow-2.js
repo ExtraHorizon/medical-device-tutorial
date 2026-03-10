@@ -7,14 +7,14 @@ const readline = require('node:readline/promises');
 (async () => {
   const sdk = await getSDK();
 
-  const rl = readline.createInterface({input: process.stdin, output: process.stdout});
+  const rl = readline.createInterface({ input: process.stdin, output: process.stdout });
 
   const documentID = await rl.question('Enter document ID to process: ');
 
   rl.close();
 
   /* Analyze the document */
-  await doTask({sdk, task: { data: { documentId: documentID }}});
+  await doTask({ sdk, task: { data: { documentId: documentID }}});
 
   console.log("Task finished!");
 })();

@@ -6,17 +6,17 @@ const fs = require('fs');
 (async () => {
   const sdk = await getSDK();
 
-  const rl = readline.createInterface({input: process.stdin, output: process.stdout});
+  const rl = readline.createInterface({ input: process.stdin, output: process.stdout });
 
   const token = await rl.question('Enter file token: ');
 
   rl.close();
 
-  //Retrieve file
+  // Retrieve file
   const pdf = await sdk.files.retrieve(token);
 
-  //Write it to disk
-  fs.writeFileSync("report.pdf",pdf);
+  // Write it to disk
+  fs.writeFileSync("report.pdf", pdf);
 
   console.log("Retrieved file & stored as report.pdf")
 })();
