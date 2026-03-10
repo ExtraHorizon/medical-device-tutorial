@@ -3,14 +3,17 @@
   "description": "Function to categorize blood pressure measurements",
   "path": "./build",
   "entryPoint": "index.handler",
-  "runtime": "nodejs16.x",
+  "runtime": "nodejs24.x",
   "timeLimit": 60,
   "memoryLimit": 128,
-  "environment": {
-    "API_HOST":"FILL_IN",
-    "API_OAUTH_CONSUMER_KEY":"FILL_IN",
-    "API_OAUTH_CONSUMER_SECRET":"FILL_IN",
-    "API_OAUTH_TOKEN":"FILL_IN",
-    "API_OAUTH_TOKEN_SECRET":"FILL_IN"
-  }
+  "executionCredentials": {
+    "permissions": [
+      "VIEW_DOCUMENTS:blood-pressure-measurement",
+      "TRANSITION_DOCUMENTS:blood-pressure-measurement",
+      "VIEW_USER",
+      "VIEW_TEMPLATES",
+      "SEND_MAILS"
+    ]
+  },
+  "$schema": "https://swagger.extrahorizon.com/cli/1.12.0/config-json-schemas/TaskConfig.json"
 }

@@ -1,28 +1,8 @@
 const { getSDK } = require('../auth.js');
+const fs = require('fs');
 
 const SYSTOLIC = 130;
 const DIASTOLIC = 70;
-
-// https://www.heart.org/en/health-topics/high-blood-pressure/understanding-blood-pressure-readings
-function getDiagnosis(systolic, diastolic) {
-  if(systolic < 120 && diastolic < 80) {
-    return "normal";
-  }
-
-  if(systolic < 130 && diastolic < 80) {
-    return "elevated";
-  }
-
-  if(systolic < 140 && diastolic < 90) {
-    return "hypertension-stage-1";
-  }
-
-  if(systolic < 180 && diastolic < 120) {
-    return "hypertension-stage-2";
-  }
-
-  return "hypertensive-crisis";
-}
 
 (async () => {
   const sdk = await getSDK();
@@ -36,7 +16,8 @@ function getDiagnosis(systolic, diastolic) {
 
   //Read the blood pressure document
   const retrievedDocument= await sdk.data.documents.findById('blood-pressure-measurement', createdDocument.id);
-  console.log(`👉 Retrieved created document:${EOL}${JSON.stringify(retrievedDocument, null, 4)}`);
+  console.log('👉 Retrieved created document:')
+  console.log(JSON.stringify(retrievedDocument, null, 4));
 
   const pdf = await sdk.files.retrieve(retrievedDocument.data.report);
   fs.writeFileSync("report.pdf",pdf);

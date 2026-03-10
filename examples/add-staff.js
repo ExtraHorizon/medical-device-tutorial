@@ -3,10 +3,6 @@
 const { getSDK } = require('./auth.js');
 const readline = require('node:readline/promises');
 
-const SCHEMA_NAME = 'blood-pressure-group';
-
-const groupType = ['high pressure', 'low pressure'];
-
 (async () => {
   const sdk = await getSDK();
 

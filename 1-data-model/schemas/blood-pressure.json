@@ -1,5 +1,4 @@
 {
-  "$schema": "https://swagger.extrahorizon.com/cli/1.11.1/config-json-schemas/Schema.json",
   "name": "blood-pressure-measurement",
   "description": "Blood pressure measurement",
   "statuses": {
@@ -23,5 +22,6 @@
       "format": "date-time",
       "description": "Timestamp when the measurement was taken"
     }
-  }
+  },
+  "$schema": "https://swagger.extrahorizon.com/cli/1.12.0/config-json-schemas/Schema.json"
 }
