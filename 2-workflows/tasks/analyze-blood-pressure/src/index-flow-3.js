@@ -13,7 +13,10 @@ exports.doTask = async ({ sdk, task }) => {
   const user = await sdk.users.findById(retrievedDocument.creatorId);
 
   // Create the PDF
-  const pdf = await createPDF({ sdk, user, document: retrievedDocument, diagnosis });
+  const pdfFileToken = await createPDF({ sdk, user, document: retrievedDocument, diagnosis });
+
+  // Download the PDF from the file service using the file token
+  const pdf = await sdk.files.retrieve(pdfFileToken);
 
   // Sending an email with the result of the analysis
   await sdk.mails.send({
