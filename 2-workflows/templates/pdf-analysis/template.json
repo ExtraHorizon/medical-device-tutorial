@@ -1,26 +1,20 @@
 {
-  "schema": {
-    "type": "object",
-    "fields": {
-      "first_name": {
-        "type": "string"
-      },
-      "category": {
-        "type": "string"
-      },
-      "diastolic": {
-        "type": "number"
-      },
-      "systolic": {
-        "type": "number"
-      },
-      "date": {
-        "type": "string"
-      }
-    }
-  },
-  "fields": {
-  },
   "description": "Template used to generate a pdf-analysis",
-  "name": "pdf-analysis"
+  "inputs": {
+    "first_name": {
+      "type": "string"
+    },
+    "category": {
+      "type": "string"
+    },
+    "diastolic": {
+      "type": "number"
+    },
+    "systolic": {
+      "type": "number"
+    },
+    "date": {
+      "type": "string"
+    }
+  }
 }
