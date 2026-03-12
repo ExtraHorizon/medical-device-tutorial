@@ -23,5 +23,5 @@
       "description": "Timestamp when the measurement was taken"
     }
   },
-  "$schema": "https://swagger.extrahorizon.com/cli/1.12.0/config-json-schemas/Schema.json"
+  "$schema": "https://swagger.extrahorizon.com/cli/1.13.0/config-json-schemas/Schema.json"
 }
