@@ -5,7 +5,7 @@
   "license": "MIT",
   "dependencies": {
     "@extrahorizon/exh-cli": "^1.13.2",
-    "@extrahorizon/javascript-sdk": "^8.9.10"
+    "@extrahorizon/javascript-sdk": "^8.10.0"
   },
   "devDependencies": {
     "esbuild": "^0.25.5"
