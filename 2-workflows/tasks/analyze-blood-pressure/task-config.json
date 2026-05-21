@@ -15,5 +15,5 @@
       "SEND_MAILS"
     ]
   },
-  "$schema": "https://swagger.extrahorizon.com/cli/1.13.3/config-json-schemas/TaskConfig.json"
+  "$schema": "https://swagger.extrahorizon.com/cli/1.13.4/config-json-schemas/TaskConfig.json"
 }
