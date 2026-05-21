@@ -28,5 +28,5 @@
       "description": "type of group"
     }
   },
-  "$schema": "https://swagger.extrahorizon.com/cli/1.13.3/config-json-schemas/Schema.json"
+  "$schema": "https://swagger.extrahorizon.com/cli/1.13.4/config-json-schemas/Schema.json"
 }
