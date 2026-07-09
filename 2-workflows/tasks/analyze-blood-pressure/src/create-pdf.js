@@ -1,7 +1,7 @@
 
 async function createPDF({ sdk, user, document, diagnosis }) {
   // Generate the PDF with the PDF analysis template
-  const task = await exh.tasks.functions.execute('html-to-pdf', {
+  const task = await sdk.tasks.functions.execute('html-to-pdf', {
       "templateName": "pdf-analysis",
       "language": "NL",
       "timeZone": "Europe/Brussels",
