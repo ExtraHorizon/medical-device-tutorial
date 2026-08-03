@@ -90,5 +90,5 @@
       "description": "File-token of the report"
     }
   },
-  "$schema": "https://swagger.extrahorizon.com/cli/1.13.6/config-json-schemas/Schema.json"
+  "$schema": "https://swagger.extrahorizon.com/cli/1.13.7/config-json-schemas/Schema.json"
 }

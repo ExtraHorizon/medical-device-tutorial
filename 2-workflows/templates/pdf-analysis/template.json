@@ -17,5 +17,5 @@
       "type": "string"
     }
   },
-  "$schema": "https://swagger.extrahorizon.com/cli/1.13.6/config-json-schemas/Template.json"
+  "$schema": "https://swagger.extrahorizon.com/cli/1.13.7/config-json-schemas/Template.json"
 }
